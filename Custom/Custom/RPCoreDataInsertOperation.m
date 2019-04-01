@@ -16,7 +16,7 @@
 - (void)main
 {
     if (!self.insertClass) {
-        DDLogWarn(@"%@ need set class",self);
+//        DDLogWarn(@"%@ need set class",self);
         return;
     }
     
