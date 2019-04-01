@@ -7,7 +7,7 @@
 //
 
 #import "RRExtraViewController.h"
-
+#import "RRReadMode.h"
 @interface RRExtraViewController ()
 
 @end
@@ -22,9 +22,6 @@
     [self.toolbar setValue:@(YES) forKey:@"hidesShadow"];
     [self.navigationBar setPrefersLargeTitles:YES];
     [self setToolbarHidden:NO animated:NO];
-    
-    
-   
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -32,10 +29,29 @@
     [super viewDidAppear:animated];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    if ([self.topViewController isKindOfClass:NSClassFromString(@"MWPhotoBrowser")] && [self.topViewController respondsToSelector:@selector(preferredStatusBarStyle)]) {
+        return [self.topViewController preferredStatusBarStyle];
+    }
+    RRReadMode mode = [[NSUserDefaults standardUserDefaults] integerForKey:@"kRRReadMode"];
+    if (mode == RRReadModeDark) {
+          return UIStatusBarStyleLightContent;
+    }
+    else if(mode == RRReadModeLight)
+    {
+         return UIStatusBarStyleDefault;
+    }
+    return [self.topViewController preferredStatusBarStyle];
+}
+
 
 // 当SizeClass发生变化后调用
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection{
     
+    if (!self.handleTrait) {
+        return;
+    }
     // 判断当前的SizeClass,如果为width compact&height regular 则说明正在分屏
     BOOL isTrait = (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassCompact) && (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular);
  

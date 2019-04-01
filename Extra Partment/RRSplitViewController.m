@@ -29,4 +29,9 @@
 }
 */
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [[self.viewControllers firstObject] preferredStatusBarStyle];
+}
+
 @end

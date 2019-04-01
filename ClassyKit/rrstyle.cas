@@ -11,11 +11,6 @@ UIButton {
     onTintColor $main-tint-color
 }
 
-^UITableViewCell > ^UIView > ^UILabel.MainLabel {
-    font $main-font $main-font-size
-    text-color $main-text-color
-}
-
 ^UITableViewCell > ^UIView > ^UILabel.MainLabelReaded {
     font $main-font $main-font-size
     text-color $main-text-color-readed
@@ -122,6 +117,23 @@ UIView.SeparaterView
     text-color $main-text-color
 }
 
+^ UITextView {
+  
+    backgroundColor clear
+
+}
+
+^UITableViewCell > ^UIView > ^UILabel.NewLabel1
+{
+    backgroundColor rgb(0,0,0,0.4)
+}
+
+^UITableViewCell > ^UIView > ^UILabel.MainLabel {
+    font $main-font $main-font-size
+    text-color $main-text-color
+}
 
 
-
+^ UISwipeActionStandardButton {
+    backgroundColor red
+}

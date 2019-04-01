@@ -28,7 +28,7 @@
     
     
     if (!self.delClass) {
-//        DDLogWarn(@"%@ need set class",self);
+        DDLogWarn(@"%@ need set class",self);
         return;
     }
     

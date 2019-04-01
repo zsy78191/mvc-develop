@@ -15,9 +15,9 @@
 	<key>$main-separator-color</key>
 	<string>#f9f9f9</string>
 	<key>$main-bg-color</key>
-	<string>#ffffff</string>
+	<string>#EFF3F6</string>
 	<key>$bar-tint-color</key>
-	<string>#f9f9f9</string>
+	<string>#EFF3F6</string>
 	<key>$title-font</key>
 	<string>PingFangSC-Light</string>
 	<key>$num-font</key>

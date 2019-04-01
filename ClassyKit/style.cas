@@ -1,7 +1,10 @@
 
+MVPSubView {
+    backgroundColor $main-bg-color
+}
 
 ^ UITableView {
-    backgroundColor $bar-tint-color
+    backgroundColor $main-bg-color
     separatorInset 0, 0, 0, 0
     separatorColor $main-separator-color
 }
